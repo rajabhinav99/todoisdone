@@ -1,0 +1,35 @@
+
+<div style="color:white;background-color:blueviolet; padding: 10px">
+    <h2 class="text-center" style="margin-top:20px">Employee Management Application</h2>
+</div>
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-5">
+      <br/>
+      <img src="../assets/To Do.png"  width="550" height="500" />
+    </div>
+  </div>
+  <br/><br/>
+  <footer>
+    <div class="row">
+      <div class="col-md-7">
+        <span class="text-danger">
+          <strong>This site is ©  to LTI, All rights are reserved here.
+          </strong></span>
+       </div>
+       <div class="col-md-5">
+         <span class="text-primary text-right">
+           <strong>
+             <!-- {{todaysDate||date:'dd/MM/YY'}}|{{todaysDate|date:'shortTime'}} -->
+              {{todaysDate|date:'dd-MM-yyyy'}}
+          </strong>
+         </span>
+       </div>
+    </div>
+    </footer>
+</div>

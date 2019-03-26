@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+      <div class="col-lg-7">
+          <form  [formGroup]="editForm" (ngSubmit)="edit()">
+
+              <div class="form-group">
+                  <label> ID</label>
+                  <input type="number" formControlName="id" name="id"
+                  id="id" class="form-control" placeholder="emailid/mobile number"/>  
+                  
+              </div>
+
+              <div class="form-group">
+                <label> Todo name</label>
+                <input type="text" formControlName="todoName"  name="todo"
+                id="fname" class="form-control" placeholder="add here....!"/>  
+                        <div *ngIf='submitted && editForm.controls.todo.invalid' class="error" >
+                <div *ngIf='editForm.controls.todo.required' class="alert alert-warning" >
+                  add some task </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label> Status</label>
+              <input type="text" formControlName="status" name="status"
+              id="fname" class="form-control" placeholder="add here....!"/>  
+                      <div *ngIf='submitted && editForm.controls.status.invalid' class="error" >
+              <div *ngIf='editForm.controls.status.required' class="alert alert-warning" >
+                add some task </div>
+            </div>
+          </div>
+  <button type="submit" class="btn btn-success" >Update</button>
+  <button class="btn btn-warning" (click)='backToList()'>Back to list</button>
+  <button  type="reset" class="btn btn-danger" >Cancel</button>
+     
+
+
+</form>
+</div>
+</div>
+<!-- <input type="number"  -->
+
+</div>

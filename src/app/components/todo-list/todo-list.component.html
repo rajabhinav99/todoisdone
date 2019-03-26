@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7">
+      <h2>Todo Details....</h2>
+      <br>
+      <button class="btn btn-success" (click)='addToDo()'>Add Todo</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-danger" (click)='logof()' >logOff</button>&nbsp;&nbsp;&nbsp;
+      <br>
+      <br>
+      <!-----<<==Table todisplay==>>-->
+
+      <table class="table table-stripped table-responsive table-hover">
+        <thead>
+          <tr>
+            <th  class="text-hide">Id</th>
+            <th>To Do</th>
+            <th>Status</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let to of todo;let i=index' >
+            <td class="text-hide"></td>
+            <td>{{to.todoName}}</td>
+            <td>{{to.status}}</td>
+           
+            <td>
+              <button class="btn btn-danger" (click)='delete(to)'>Delete</button>&nbsp;&nbsp;
+              <button class="btn btn-warning" (click)='editToDo(to)'>Edit</button>&nbsp;&nbsp;
+
+            </td>
+          </tr>
+          <tr [hidden] = "todo.length!=0">
+            <th colspan="5"><p class="text-right text-danger">Sorry, Todos to display...!</p></th>
+      </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+</div>
